@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private Button counter;
+    private Button displayBtn;
 
 
 
@@ -24,9 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         counter = findViewById(R.id.counterBtn);
+        displayBtn = findViewById(R.id.displayBtn);
 
         counter.setOnClickListener(v -> {
             Intent intent = new Intent(this, CounterActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+        displayBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, DisplayActivity.class);
             startActivity(intent);
             finish();
         });

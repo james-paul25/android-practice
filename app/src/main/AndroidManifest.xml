@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Practice">
 
         <activity android:name=".CounterActivity" />
+        <activity android:name=".DisplayActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
