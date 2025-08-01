@@ -28,4 +28,9 @@
         android:layout_height="wrap_content"
         android:text="Display" />
 
+    <Button
+        android:id="@+id/ttsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text To Speech" />
 </LinearLayout>

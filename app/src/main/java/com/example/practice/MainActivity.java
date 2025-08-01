@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button counter;
     private Button displayBtn;
+    private Button ttsBtn;
 
 
 
@@ -26,17 +27,23 @@ public class MainActivity extends AppCompatActivity {
 
         counter = findViewById(R.id.counterBtn);
         displayBtn = findViewById(R.id.displayBtn);
+        ttsBtn = findViewById(R.id.ttsBtn);
 
         counter.setOnClickListener(v -> {
             Intent intent = new Intent(this, CounterActivity.class);
             startActivity(intent);
             finish();
         });
-
         displayBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, DisplayActivity.class);
             startActivity(intent);
             finish();
         });
+        ttsBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TextToSpeechActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
     }
 }
