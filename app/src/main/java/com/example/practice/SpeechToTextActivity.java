@@ -19,6 +19,7 @@ public class SpeechToTextActivity extends AppCompatActivity {
 
     private TextView speechTxt;
     private Button speechBtn;
+    private Button backBtn;
 
 
 
@@ -28,9 +29,15 @@ public class SpeechToTextActivity extends AppCompatActivity {
 
         speechTxt = findViewById(R.id.speechTxt);
         speechBtn = findViewById(R.id.speechBtn);
+        backBtn = findViewById(R.id.backBtn);
 
         speechBtn.setOnClickListener(v -> {
             startSpeechToText();
+        });
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

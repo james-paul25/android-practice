@@ -1,5 +1,6 @@
 package com.example.practice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.widget.Button;
@@ -14,6 +15,7 @@ public class TextToSpeechActivity extends AppCompatActivity {
     private EditText text;
     private Button ttsBtn;
     private TextToSpeech tts; //Declare the TextToSpeech
+    private Button backBtn;
 
     public void speak(EditText txt){
         String text = txt.getText().toString();
@@ -31,9 +33,15 @@ public class TextToSpeechActivity extends AppCompatActivity {
 
         text = findViewById(R.id.text);
         ttsBtn = findViewById(R.id.ttsBtn);
+        backBtn = findViewById(R.id.backBtn);
 
         ttsBtn.setOnClickListener(v -> {
             speak(text);
+        });
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 
