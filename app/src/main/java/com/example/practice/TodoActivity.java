@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.practice.adapter.TodoAdapter;
@@ -36,14 +37,18 @@ public class TodoActivity extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.todo_layout);
 
-
+        // from xml ni goyss
         backBtn = findViewById(R.id.backBtn);
         addTodoBtn = findViewById(R.id.addTodoBtn);
         todoEdit = findViewById(R.id.todoEdit);
         recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         todoList = loadData();
+
+        todoAdapter = new TodoAdapter(todoList);
+        recyclerView.setAdapter(todoAdapter);
 
         backBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
@@ -59,7 +64,7 @@ public class TodoActivity extends AppCompatActivity {
     public void addTodoItem(EditText text){
         String textToAdd = text.getText().toString();
 
-        if(!textToAdd.isEmpty()){
+        if (!textToAdd.isEmpty()) {
             TodoItem item = new TodoItem(textToAdd);
             todoList.add(item);
             todoAdapter.notifyItemInserted(todoList.size() - 1);
