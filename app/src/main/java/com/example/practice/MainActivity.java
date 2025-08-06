@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button ttsBtn;
     private Button sttBtn;
     private Button speakTTBtn;
+    private Button todoBtn;
 
 
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ttsBtn = findViewById(R.id.ttsBtn);
         sttBtn = findViewById(R.id.sttBtn);
         speakTTBtn = findViewById(R.id.speakTTBtn);
+        todoBtn = findViewById(R.id.todoBtn);
 
         counter.setOnClickListener(v -> {
             Intent intent = new Intent(this, CounterActivity.class);
@@ -55,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
         });
         speakTTBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, SpeakToSpeechActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        todoBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TodoActivity.class);
             startActivity(intent);
             finish();
         });
