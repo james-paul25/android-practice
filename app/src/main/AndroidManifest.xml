@@ -18,6 +18,7 @@
         <activity android:name=".TextToSpeechActivity" />
         <activity android:name=".SpeechToTextActivity" />
         <activity android:name=".SpeakToSpeechActivity" />
+        <activity android:name=".TodoActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
