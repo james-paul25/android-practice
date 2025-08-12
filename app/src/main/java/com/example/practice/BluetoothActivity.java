@@ -119,8 +119,8 @@ public class BluetoothActivity extends AppCompatActivity {
         statusTxt.setText(String.format("Status: %s" , status));
     }
 
-    public void disableBt(){
+    @Override
+   protected void onDestroy(){
         super.onDestroy();
-    }
-
+   }
 }
