@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button sttBtn;
     private Button speakTTBtn;
     private Button todoBtn;
+    private Button bluetoothBtn;
 
 
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         sttBtn = findViewById(R.id.sttBtn);
         speakTTBtn = findViewById(R.id.speakTTBtn);
         todoBtn = findViewById(R.id.todoBtn);
+        bluetoothBtn = findViewById(R.id.bluetoothBtn);
 
         counter.setOnClickListener(v -> {
             Intent intent = new Intent(this, CounterActivity.class);
@@ -62,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
         });
         todoBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, TodoActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        bluetoothBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BluetoothActivity.class);
             startActivity(intent);
             finish();
         });

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/enableBT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Bluetooth"
+        />
+
+    <Button
+        android:id="@+id/showPairedBTn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Paired Devices"
+        android:layout_marginTop="5dp"
+        />
+
+    <Button
+        android:id="@+id/scanBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scan Devices"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/statusTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status: Bluetooth OFF"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        />
+
+    <ListView
+        android:id="@+id/listDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        />
+
+</LinearLayout>
